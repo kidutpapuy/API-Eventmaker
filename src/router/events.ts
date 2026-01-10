@@ -48,7 +48,7 @@ export const eventsRouter = new Hono()
         data: {
             name: body.name,
             description: body.description,
-            dateTime: body.date,
+            dateTime: body.dateTime ? new Date(body.dateTime) : undefined,
             location: body.location,
         }
     });
